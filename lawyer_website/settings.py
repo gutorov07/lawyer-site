@@ -6,13 +6,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'dev-key-12345-change-in-production'
 
-DEBUG = True
+DEBUG = False
 
 # Разрешенные хосты (обязательно при DEBUG=False)
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    # 'ваш-домен.ru',    # Раскомментируйте для продакшена
+    'saintptavo.com',    # Раскомментируйте для продакшена
     # 'www.ваш-домен.ru',
 ]
 
