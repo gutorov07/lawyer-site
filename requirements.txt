@@ -1,0 +1,8 @@
+Django==6.0.1
+djangorestframework>=3.14.0
+psycopg2-binary>=2.9.7  # для работы с PostgreSQL
+Pillow>=10.0.0          # для работы с изображениями
+python-dotenv>=1.0.0    # для переменных окружения
+celery>=5.3.1           # для асинхронных задач
+redis>=4.5.5            # для кэша и очередей
+gunicorn>=21.2.0        # для запуска на сервере

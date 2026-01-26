@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1 class="fw-bold mb-4">{{ title }}</h1>
+            <p class="lead">Наша команда профессиональных юристов готова помочь вам в решении любых правовых вопросов.</p>
+        </div>
+    </div>
+
+    {% if lawyers %}
+    <h2 class="text-center mb-5">Наша команда</h2>
+    <div class="row">
+        {% for lawyer in lawyers %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                {% if lawyer.photo %}
+                <img src="{{ lawyer.photo.url }}" class="card-img-top" alt="{{ lawyer.full_name }}">
+                {% else %}
+                <div class="text-center py-5 bg-light">
+                    <i class="bi bi-person-circle" style="font-size: 5rem; color: #ccc;"></i>
+                </div>
+                {% endif %}
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ lawyer.full_name }}</h5>
+                    <p class="text-muted">{{ lawyer.position }}</p>
+                    <p class="card-text">{{ lawyer.specialization }}</p>
+                    <p><strong>Стаж:</strong> {{ lawyer.get_experience_display }}</p>
+                    <a href="mailto:{{ lawyer.email }}" class="btn btn-outline-primary btn-sm">
+                        <i class="bi bi-envelope"></i> Написать
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="alert alert-info text-center">
+        Информация о юристах будет добавлена позже.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

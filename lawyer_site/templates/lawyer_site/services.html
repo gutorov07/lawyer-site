@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1 class="fw-bold mb-4">{{ title }}</h1>
+            <p class="lead">Мы предлагаем широкий спектр юридических услуг для бизнеса и частных лиц.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for service in services %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="service-icon">
+                        <i class="bi {{ service.icon|default:'bi-briefcase' }}"></i>
+                    </div>
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.short_description|default:"Описание услуги" }}</p>
+                    {% if service.price_from %}
+                    <p class="text-primary fw-bold">{{ service.get_price_display }}</p>
+                    {% endif %}
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a href="{% url 'service_detail' service.id %}" class="btn btn-primary w-100">
+                        Подробнее
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <p>Услуги пока не добавлены. Зайдите позже.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
