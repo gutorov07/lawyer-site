@@ -14,6 +14,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'saintptavo.com',    # Раскомментируйте для продакшена
     'lawyer-site.up.railway.app',
+    '.railway.app',
     '.up.railway.app',
     '0.0.0.0',
 ]
@@ -27,6 +28,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # ↓↓↓ ДОБАВЬТЕ ЭТУ СТРОКУ ↓↓↓
     'lawyer_site',  # ← Ваше приложение
+]
+
+RAILWAY_PUBLIC_DOMAIN = os.environ.get('RAILWAY_PUBLIC_DOMAIN')
+if RAILWAY_PUBLIC_DOMAIN:
+    ALLOWED_HOSTS.append(RAILWAY_PUBLIC_DOMAIN)
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+    'https://*.up.railway.app',
 ]
 
 MIDDLEWARE = [
