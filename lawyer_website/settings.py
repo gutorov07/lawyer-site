@@ -2,6 +2,8 @@
 import os
 from pathlib import Path
 
+bind = f"0.0.0.0:{os.environ.get('PORT', '8000')}"
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'dev-key-12345-change-in-production'
