@@ -13,7 +13,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'saintptavo.com',    # Раскомментируйте для продакшена
-    'lawyer-site-production.up.railway.app',
+    'lawyer-site.up.railway.app',
+    '.up.railway.app',
     '0.0.0.0',
 ]
 
