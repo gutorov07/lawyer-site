@@ -1,0 +1,407 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title|default:"Профессиональная юридическая помощь" }}{% endblock %}
+
+{% block content %}
+<!-- Главный баннер -->
+<section class="hero-section py-5 py-lg-6">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6 order-lg-1 order-2">
+                <h1 class="display-4 fw-bold mb-4 text-primary">
+                    Защита ваших прав и интересов
+                </h1>
+                <p class="lead mb-4">
+                    Команда профессиональных юристов с опытом более 15 лет. 
+                    Решаем сложные юридические задачи любой сложности для бизнеса и частных лиц.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
+                    <a href="#contact-form" class="btn btn-primary btn-lg px-4 py-3">
+                        <i class="bi bi-chat-dots me-2"></i>Бесплатная консультация
+                    </a>
+                    <a href="tel:+74951234567" class="btn btn-outline-primary btn-lg px-4 py-3">
+                        <i class="bi bi-telephone me-2"></i>+7 (495) 123-45-67
+                    </a>
+                </div>
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                        <span>Первая консультация бесплатно</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                        <span>Конфиденциальность</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-2 order-1 text-center">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Юридическая консультация" 
+                     class="img-fluid rounded-4 shadow-lg" 
+                     loading="eager">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Экспресс-помощь -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">Нужна срочная помощь?</h2>
+            <p class="text-muted fs-5">Мы решаем вопросы любой сложности</p>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="icon-wrapper mb-3">
+                        <i class="bi bi-house-door-fill text-primary fs-1"></i>
+                    </div>
+                    <h5 class="fw-bold">Жилищные споры</h5>
+                    <p class="text-muted">Раздел имущества, выселение, признание права собственности</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="icon-wrapper mb-3">
+                        <i class="bi bi-briefcase-fill text-primary fs-1"></i>
+                    </div>
+                    <h5 class="fw-bold">Бизнес-консультирование</h5>
+                    <p class="text-muted">Сопровождение сделок, налоговые споры, корпоративное право</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="icon-wrapper mb-3">
+                        <i class="bi bi-car-front-fill text-primary fs-1"></i>
+                    </div>
+                    <h5 class="fw-bold">ДТП и автоспоры</h5>
+                    <p class="text-muted">Взыскание ущерба, страховые споры, административные дела</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="icon-wrapper mb-3">
+                        <i class="bi bi-heart-pulse-fill text-primary fs-1"></i>
+                    </div>
+                    <h5 class="fw-bold">Медицинские споры</h5>
+                    <p class="text-muted">Врачебные ошибки, некачественные услуги, компенсация вреда</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Наши преимущества -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">Почему выбирают нас</h2>
+                
+                <div class="d-flex align-items-start mb-4">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-award-fill text-primary fs-4"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="fw-bold">Опыт 15+ лет</h5>
+                        <p>Наша команда успешно ведет дела с 2008 года</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-start mb-4">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-shield-check text-primary fs-4"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="fw-bold">97% успешных дел</h5>
+                        <p>Высокий процент положительных решений в пользу клиентов</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-start mb-4">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-coin text-primary fs-4"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="fw-bold">Честные цены</h5>
+                        <p>Фиксированная стоимость услуг, без скрытых платежей</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-start">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-clock-history text-primary fs-4"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="fw-bold">Работаем 24/7</h5>
+                        <p>Круглосуточная поддержка в экстренных ситуациях</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-4 p-lg-5">
+                        <h3 class="fw-bold mb-4">Получите бесплатную консультацию</h3>
+                        
+                        <form id="contact-form" method="post" action="{% url 'contact' %}">
+                            {% csrf_token %}
+                            
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Ваше имя</label>
+                                <input type="text" class="form-control form-control-lg" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Телефон</label>
+                                <input type="tel" class="form-control form-control-lg" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="question" class="form-label">Краткое описание вопроса</label>
+                                <textarea class="form-control form-control-lg" id="question" name="question" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="agree" required>
+                                <label class="form-check-label small" for="agree">
+                                    Согласен на обработку персональных данных
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+                                Отправить заявку
+                            </button>
+                        </form>
+                        
+                        <div class="mt-4 text-center">
+                            <p class="text-muted small mb-2">Или позвоните прямо сейчас</p>
+                            <a href="tel:+74951234567" class="btn btn-outline-primary">
+                                <i class="bi bi-telephone me-2"></i>+7 (495) 123-45-67
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Отзывы -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">Отзывы клиентов</h2>
+            <p class="text-muted">Более 500 довольных клиентов за последний год</p>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                АИ
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Александр Иванов</h6>
+                                <small class="text-muted">Директор ООО "СтройГарант"</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Помогли выиграть сложный арбитражный спор на 15 млн рублей. Профессионалы высшего класса!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                МП
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Мария Петрова</h6>
+                                <small class="text-muted">Частное лицо</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Решили квартирный вопрос с бывшим супругом. Все быстро, четко, без лишних эмоций. Спасибо!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                СК
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Сергей Козлов</h6>
+                                <small class="text-muted">ИП</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Сопровождали сделку по покупке бизнеса. Все документы проверили, риски минимизировали. Рекомендую!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Статистика -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row row-cols-2 row-cols-md-4 text-center">
+            <div class="col mb-4">
+                <div class="display-4 fw-bold">15+</div>
+                <p class="mb-0">Лет опыта</p>
+            </div>
+            <div class="col mb-4">
+                <div class="display-4 fw-bold">500+</div>
+                <p class="mb-0">Довольных клиентов</p>
+            </div>
+            <div class="col mb-4">
+                <div class="display-4 fw-bold">97%</div>
+                <p class="mb-0">Успешных дел</p>
+            </div>
+            <div class="col mb-4">
+                <div class="display-4 fw-bold">24/7</div>
+                <p class="mb-0">Поддержка</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Кнопка звонка для мобильных -->
+<div class="fixed-bottom d-lg-none" style="z-index: 1030;">
+    <div class="container pb-3">
+        <div class="d-grid">
+            <a href="tel:+74951234567" class="btn btn-primary btn-lg shadow-lg py-3">
+                <i class="bi bi-telephone me-2"></i>Бесплатная консультация
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(13, 110, 253, 0.1);
+        border-radius: 50%;
+    }
+    
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    .avatar {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    
+    /* Анимации */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animate-fade-in {
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 3rem 0;
+        }
+        
+        .display-4 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Плавная прокрутка к форме
+    document.addEventListener('DOMContentLoaded', function() {
+        const formLink = document.querySelector('a[href="#contact-form"]');
+        if (formLink) {
+            formLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const form = document.getElementById('contact-form');
+                if (form) {
+                    form.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        }
+        
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Наблюдаем за карточками
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Маска для телефона
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    value = '+7 (' + value;
+                    if (value.length > 7) value = value.substring(0, 7) + ') ' + value.substring(7);
+                    if (value.length > 12) value = value.substring(0, 12) + '-' + value.substring(12);
+                    if (value.length > 15) value = value.substring(0, 15) + '-' + value.substring(15);
+                    if (value.length > 18) value = value.substring(0, 18);
+                }
+                e.target.value = value;
+            });
+        }
+    });
+</script>
+{% endblock %}
