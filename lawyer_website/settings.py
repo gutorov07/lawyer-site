@@ -1,6 +1,9 @@
 # lawyer_website/settings.py (минимальная версия)
 import os
 from pathlib import Path
+import socket
+from django.core.mail.utils import DNS_NAME
+
 
 bind = f"0.0.0.0:{os.environ.get('PORT', '8080')}"
 
@@ -89,6 +92,15 @@ LANGUAGE_CODE = 'ru-ru'
 TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_TZ = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mspelmen5@gmail.com'  # ваш Gmail
+EMAIL_HOST_PASSWORD = 'vyxx xmfs tadr ftus'  # НЕ основной пароль!
+DEFAULT_FROM_EMAIL = 'mspelmen5@gmail.com'
+SERVER_EMAIL = 'mspelmen5@gmail.com'
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']

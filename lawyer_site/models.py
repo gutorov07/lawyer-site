@@ -4,11 +4,8 @@ from django.core.validators import MinLengthValidator, MaxValueValidator, MinVal
 from django.utils import timezone
 from django.contrib.auth import get_user_model
 # Для расширенного текстового редактора (опционально)
-try:
-    from ckeditor.fields import RichTextField
-except ImportError:
-    # Заглушка, если ckeditor не установлен
-    from django.db.models import TextField as RichTextField
+
+from django.db.models import TextField as RichTextField
 
 User = get_user_model()
 
@@ -62,6 +59,41 @@ class Service(models.Model):
         elif self.price_to:
             return f"до {self.price_to} руб."
         return "Цена по запросу"
+    
+
+    class Service(models.Model):
+        SERVICE_TYPES = [
+        ('consumer', 'Защита прав потребителя'),
+        ('family', 'Семейное право'),
+        ('auto', 'Автоюрист'),
+        ('compensation', 'Возмещение вреда'),
+        ('debt', 'Взыскание долгов'),
+    ]
+    
+    title = models.CharField(max_length=200, verbose_name='Название услуги')
+    service_type = models.CharField(
+    max_length=50, 
+    verbose_name='Тип услуги',
+    help_text='Например: потребитель, семейное, авто и т.д.'
+    )
+    short_description = models.TextField(verbose_name='Краткое описание')
+    full_description = models.TextField(verbose_name='Полное описание')
+    price_from = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена от')
+    price_to = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, verbose_name='Цена до')
+    icon = models.CharField(max_length=50, default='bi-briefcase', verbose_name='Иконка')
+    is_active = models.BooleanField(default=True, verbose_name='Активна')
+    order = models.IntegerField(default=0, verbose_name='Порядок')
+    
+    def get_price_display(self):
+        if self.price_to:
+            return f"от {self.price_from} до {self.price_to} ₽"
+        return f"от {self.price_from} ₽"
+    
+    class Meta:
+        ordering = ['order', 'title']
+    
+    def __str__(self):
+        return self.title
 
 class LawyerInfo(models.Model):
     """Модель для информации о юристах"""

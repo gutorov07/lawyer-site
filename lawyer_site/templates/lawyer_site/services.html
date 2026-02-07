@@ -1,44 +1,477 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}Услуги - Независимое юридическое агентство{% endblock %}
 
 {% block content %}
 <div class="container py-5">
+    <!-- Заголовок -->
     <div class="row mb-5">
         <div class="col-lg-8 mx-auto text-center">
-            <h1 class="fw-bold mb-4">{{ title }}</h1>
-            <p class="lead">Мы предлагаем широкий спектр юридических услуг для бизнеса и частных лиц.</p>
+            <h1 class="fw-bold mb-4">Наши услуги</h1>
+            <p class="lead text-muted">Профессиональные юридические услуги по всем направлениям права. 
+            Более 15 лет успешной практики.</p>
         </div>
     </div>
 
-    <div class="row">
-        {% for service in services %}
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <div class="service-icon">
-                        <i class="bi {{ service.icon|default:'bi-briefcase' }}"></i>
-                    </div>
-                    <h5 class="card-title">{{ service.title }}</h5>
-                    <p class="card-text">{{ service.short_description|default:"Описание услуги" }}</p>
-                    {% if service.price_from %}
-                    <p class="text-primary fw-bold">{{ service.get_price_display }}</p>
-                    {% endif %}
-                </div>
-                <div class="card-footer bg-transparent">
-                    <a href="{% url 'service_detail' service.id %}" class="btn btn-primary w-100">
-                        Подробнее
-                    </a>
-                </div>
-            </div>
-        </div>
-        {% empty %}
+    <!-- Навигация по разделам -->
+    <div class="row mb-5">
         <div class="col-12">
-            <div class="alert alert-info text-center">
-                <p>Услуги пока не добавлены. Зайдите позже.</p>
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-4">Быстрая навигация по услугам:</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#consumer-rights" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-shield-check me-1"></i>Защита прав потребителя
+                        </a>
+                        <a href="#family-law" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-heart-fill me-1"></i>Семейное право
+                        </a>
+                        <a href="#auto-lawyer" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-car-front-fill me-1"></i>Автоюрист
+                        </a>
+                        <a href="#compensation" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-cash-stack me-1"></i>Возмещение вреда
+                        </a>
+                        <a href="#debt-collection" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-credit-card-fill me-1"></i>Взыскание долгов
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        {% endfor %}
     </div>
+
+    <!-- Секция услуг с якорями -->
+    
+    <!-- 1. Защита прав потребителя -->
+    <section id="consumer-rights" class="mb-5 pt-4">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-8">
+                <h2 class="fw-bold mb-3">
+                    <i class="bi bi-shield-check text-primary me-3"></i>Защита прав потребителя
+                </h2>
+                <p class="lead text-muted">Отстаиваем ваши права при покупке товаров и услуг</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="#contact-form" class="btn btn-primary">
+                    <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Что мы делаем:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border-0 px-0 py-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Возврат денег за некачественный товар</strong> - полный возврат средств
+                            </li>
+                            <li class="list-group-item border-0 px-0 py-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Компенсация морального вреда</strong> - взыскание до 500,000 рублей
+                            </li>
+                            <li class="list-group-item border-0 px-0 py-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Взыскание неустойки и штрафа 50%</strong> - по закону о защите прав потребителей
+                            </li>
+                            <li class="list-group-item border-0 px-0 py-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Обмен товара ненадлежащего качества</strong> - быстро и без потерь
+                            </li>
+                            <li class="list-group-item border-0 px-0 py-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Споры с туроператорами</strong> - отмена туров, возврат денег
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-4 pt-3 border-top">
+                            <h6 class="fw-bold mb-3">Стоимость услуг:</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Консультация</span>
+                                        <strong class="text-primary">Бесплатно</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Составление претензии</span>
+                                        <strong class="text-primary">от 3 000 ₽</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Ведение дела в суде</span>
+                                        <strong class="text-primary">от 15 000 ₽</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Или процент от взысканной суммы</span>
+                                        <strong class="text-primary">15-25%</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card border-primary border-2 h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i>Сроки решения</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Досудебное урегулирование:</h6>
+                            <p class="mb-0">10-30 дней</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Судебное разбирательство:</h6>
+                            <p class="mb-0">2-6 месяцев</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Успешность дел:</h6>
+                            <div class="progress" style="height: 20px;">
+                                <div class="progress-bar bg-success" style="width: 95%">95%</div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#contact-form" class="btn btn-primary w-100">
+                                <i class="bi bi-telephone me-2"></i>Записаться на консультацию
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Семейное право -->
+    <section id="family-law" class="mb-5 pt-4">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-8">
+                <h2 class="fw-bold mb-3">
+                    <i class="bi bi-heart-fill text-primary me-3"></i>Семейное право
+                </h2>
+                <p class="lead text-muted">Решение семейных споров с минимальными эмоциональными затратами</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="#contact-form" class="btn btn-primary">
+                    <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Расторжение брака</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Через ЗАГС и суд</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>При наличии и отсутствии детей</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>С иностранным элементом</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Без вашего присутствия в суде</li>
+                        </ul>
+                        <p class="text-primary fw-bold mt-3">от 25 000 ₽</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Раздел имущества</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Квартиры, дома, земельные участки</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Автомобили и техника</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Бизнес и доли в компаниях</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Банковские вклады и ценные бумаги</li>
+                        </ul>
+                        <p class="text-primary fw-bold mt-3">от 30 000 ₽ или 10% от стоимости имущества</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Взыскание алиментов</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>На несовершеннолетних детей</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>На супруга/супругу</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>В твердой денежной сумме</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Задолженность за прошлые периоды</li>
+                        </ul>
+                        <p class="text-primary fw-bold mt-3">от 20 000 ₽</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Определение места жительства детей</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Споры между родителями</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Установление порядка общения</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Лишение/ограничение родительских прав</li>
+                            <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Установление отцовства</li>
+                        </ul>
+                        <p class="text-primary fw-bold mt-3">от 35 000 ₽</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Автоюрист -->
+    <section id="auto-lawyer" class="mb-5 pt-4">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-8">
+                <h2 class="fw-bold mb-3">
+                    <i class="bi bi-car-front-fill text-primary me-3"></i>Автоюрист
+                </h2>
+                <p class="lead text-muted">Защита прав водителей при ДТП и автоспорах</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="#contact-form" class="btn btn-primary">
+                    <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3">После ДТП:</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Оформление европротокола</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Взыскание ущерба со страховой</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Взыскание с виновника</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Компенсация морального вреда</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3">Административные дела:</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Обжалование постановлений ГИБДД</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Возврат водительских прав</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Споры о лишении прав</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Снижение размера штрафов</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Срочная помощь при ДТП</h5>
+                        <p class="mb-3">Выезд юриста на место ДТП в течение 60 минут</p>
+                        <p class="display-6 fw-bold text-primary mb-0">5 000 ₽</p>
+                        <small class="text-muted">+ 10% от взысканной суммы</small>
+                        <a href="tel:+74951234567" class="btn btn-danger w-100 mt-3">
+                            <i class="bi bi-telephone me-2"></i>Срочный вызов юриста
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Возмещение вреда -->
+    <section id="compensation" class="mb-5 pt-4">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-8">
+                <h2 class="fw-bold mb-3">
+                    <i class="bi bi-cash-stack text-primary me-3"></i>Возмещение вреда
+                </h2>
+                <p class="lead text-muted">Компенсация материального и морального ущерба</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="#contact-form" class="btn btn-primary">
+                    <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
+                </a>
+            </div>
+        </div>
+        
+        <!-- Контент для возмещения вреда -->
+    </section>
+
+    <!-- 5. Взыскание долгов -->
+    <section id="debt-collection" class="mb-5 pt-4">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-8">
+                <h2 class="fw-bold mb-3">
+                    <i class="bi bi-credit-card-fill text-primary me-3"></i>Взыскание долгов
+                </h2>
+                <p class="lead text-muted">Принудительное взыскание через суд и службу судебных приставов</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="#contact-form" class="btn btn-primary">
+                    <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
+                </a>
+            </div>
+        </div>
+        
+        <!-- Контент для взыскания долгов -->
+    </section>
+
+    <!-- Форма заявки (якорь для ссылок) -->
+    <section id="contact-form" class="py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-4 p-lg-5">
+                        <h3 class="fw-bold mb-4 text-center">Записаться на консультацию</h3>
+                        
+                        <form method="post" action="{% url 'home' %}">
+                            {% csrf_token %}
+                            
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Ваше имя</label>
+                                <input type="text" class="form-control form-control-lg" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Телефон</label>
+                                <input type="tel" class="form-control form-control-lg" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Интересующая услуга</label>
+                                <select class="form-control form-control-lg" id="service" name="service">
+                                    <option value="">Выберите услугу</option>
+                                    <option value="consumer-rights">Защита прав потребителя</option>
+                                    <option value="family-law">Семейное право</option>
+                                    <option value="auto-lawyer">Автоюрист</option>
+                                    <option value="compensation">Возмещение вреда</option>
+                                    <option value="debt-collection">Взыскание долгов</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="question" class="form-label">Краткое описание вопроса</label>
+                                <textarea class="form-control form-control-lg" id="question" name="question" rows="3"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+                                <i class="bi bi-send me-2"></i>Отправить заявку
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Плавная прокрутка к якорям */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Стили для якорных секций */
+section[id] {
+    scroll-margin-top: 80px; /* Отступ для фиксированного навбара */
+}
+
+/* Выделение активного раздела при прокрутке */
+.active-section {
+    background: linear-gradient(to right, rgba(52, 152, 219, 0.1), transparent);
+    border-left: 4px solid #3498db;
+    padding-left: 15px !important;
+}
+
+/* Стили для карточек услуг */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Стили для иконок */
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 50%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    section[id] {
+        scroll-margin-top: 100px;
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Подсветка активного раздела при прокрутке
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollY >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // Автоматическое заполнение поля услуги при клике из навигации
+    const serviceSelect = document.getElementById('service');
+    const quickNavLinks = document.querySelectorAll('.btn-outline-primary[href^="#"]');
+    
+    quickNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const serviceId = this.getAttribute('href').replace('#', '');
+            const optionText = this.textContent.trim().replace(/[^a-zA-Zа-яА-Я\s]/g, '');
+            
+            // Ищем соответствующий option
+            for (let option of serviceSelect.options) {
+                if (option.value === serviceId) {
+                    serviceSelect.value = serviceId;
+                    break;
+                } else if (option.text.includes(optionText)) {
+                    serviceSelect.value = option.value;
+                    break;
+                }
+            }
+        });
+    });
+});
+</script>
 {% endblock %}
