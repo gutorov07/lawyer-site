@@ -154,49 +154,54 @@
     
     {% block extra_css %}{% endblock %}
 </head>
+
+
+
 <body>
     <!-- Навигация -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">
-            <a class="navbar-brand fw-bold" href="{% url 'home' %}">
-    <i class="bi bi-balance me-2 text-primary"></i>Независимое юридическое агентство
-</a>
+        <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+            <i class="bi bi-balance me-2 text-primary"></i>Независимое юридическое агентство
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Меню">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto w-50 d-flex"> <!-- Убрали justify-content-around, добавили d-flex -->
-                <li class="nav-item flex-fill mx-1">
+            <ul class="navbar-nav ms-auto"> <!-- Убрали w-50 и pe-5 -->
+                <li class="nav-item mx-2"> <!-- Убрал flex-fill -->
                     <a class="nav-link {% if request.path == '/' %}active{% endif %} text-center py-2 d-block" 
                        href="{% url 'home' %}" 
-                       style="background: #2c3e50; border-radius: 16px; color: white !important; text-decoration: none; border: none;">
+                       style="width: 110px; height: 25px; line-height: 30px; background: #2c3e50; border-radius: 10px; color: white !important; text-decoration: none; border: none;">
                         <i class="bi bi-house-door me-1"></i>Главная
                     </a>
                 </li>
-                <li class="nav-item flex-fill mx-1">
+                <li class="nav-item mx-2">
                     <a class="nav-link {% if 'about' in request.path %}active{% endif %} text-center py-2 d-block" 
                        href="{% url 'about' %}" 
-                       style="background: #2c3e50; border-radius: 16px; color: white !important; text-decoration: none; border: none;">
-                        <i class="bi bi-people me-1"></i>О нас
+                       style="width: 110px; height: 25px; line-height: 30px; background: #2c3e50; border-radius: 10px; color: white !important; text-decoration: none; border: none;">
+                        <i class="bi bi-book me-1"></i>О нас
                     </a>
                 </li>
-                <li class="nav-item flex-fill mx-1">
+                <li class="nav-item mx-2">
                     <a class="nav-link {% if 'services' in request.path %}active{% endif %} text-center py-2 d-block" 
                        href="{% url 'services' %}" 
-                       style="background: #2c3e50; border-radius: 16px; color: white !important; text-decoration: none; border: none;">
+                       style="width: 110px; height: 25px; line-height: 30px; background: #2c3e50; border-radius: 10px; color: white !important; text-decoration: none; border: none;">
                         <i class="bi bi-briefcase me-1"></i>Услуги
                     </a>
                 </li>
-                <li class="nav-item flex-fill mx-1">
+                <li class="nav-item mx-2">
                     <a class="nav-link {% if 'contact' in request.path %}active{% endif %} text-center py-2 d-block" 
                        href="{% url 'contact' %}" 
-                       style="background: #2c3e50; border-radius: 16px; color: white !important; text-decoration: none; border: none;">
+                       style="width: 110px; height: 25px; line-height: 30px; background: #2c3e50; border-radius: 10px; color: white !important; text-decoration: none; border: none;">
                         <i class="bi bi-envelope me-1"></i>Контакты
                     </a>
                 </li>
+            </ul>
+        </div>
+    </div>
+</nav>
                 <!-- Мобильный телефон (если нужно оставить) -->
                 
                     <!-- Мобильный телефон -->

@@ -16,31 +16,51 @@
 
     <!-- Навигация по разделам -->
     <div class="row mb-5">
-        <div class="col-12">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-4">
-                    <h5 class="fw-bold mb-4">Быстрая навигация по услугам:</h5>
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="#consumer-rights" class="btn btn-outline-primary btn-sm">
-                            <i class="bi bi-shield-check me-1"></i>Защита прав потребителя
+    <div class="col-12">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h5 class="fw-bold mb-4 fs-2">Быстрая навигация по услугам:</h5>
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2">
+                    <div class="col">
+                        <a href="#consumer-rights" class="btn btn-primary w-100 text-white d-flex align-items-center justify-content-center" 
+                           style="background-color: #2a6ad1; border: none; height: 70px; min-height: 70px; padding: 0.5rem 1rem;">
+                            <i class="bi bi-shield-check me-2"></i>
+                            <span style="font-size: 1.125rem;">Защита прав потребителя</span>
                         </a>
-                        <a href="#family-law" class="btn btn-outline-primary btn-sm">
-                            <i class="bi bi-heart-fill me-1"></i>Семейное право
+                    </div>
+                    <div class="col">
+                        <a href="#family-law" class="btn btn-primary w-100 text-white d-flex align-items-center justify-content-center" 
+                           style="background-color: #2a6ad1; border: none; height: 70px; min-height: 70px; padding: 0.5rem 1rem;">
+                            <i class="bi bi-heart-fill me-2"></i>
+                            <span style="font-size: 1.125rem;">Семейное право</span>
                         </a>
-                        <a href="#auto-lawyer" class="btn btn-outline-primary btn-sm">
-                            <i class="bi bi-car-front-fill me-1"></i>Автоюрист
+                    </div>
+                    <div class="col">
+                        <a href="#auto-lawyer" class="btn btn-primary w-100 text-white d-flex align-items-center justify-content-center" 
+                           style="background-color: #2a6ad1; border: none; height: 70px; min-height: 70px; padding: 0.5rem 1rem;">
+                            <i class="bi bi-car-front-fill me-2"></i>
+                            <span style="font-size: 1.125rem;">Автоюрист</span>
                         </a>
-                        <a href="#compensation" class="btn btn-outline-primary btn-sm">
-                            <i class="bi bi-cash-stack me-1"></i>Возмещение вреда
+                    </div>
+                    <div class="col">
+                        <a href="#compensation" class="btn btn-primary w-100 text-white d-flex align-items-center justify-content-center" 
+                           style="background-color: #2a6ad1; border: none; height: 70px; min-height: 70px; padding: 0.5rem 1rem;">
+                            <i class="bi bi-cash-stack me-2"></i>
+                            <span style="font-size: 1.125rem;">Возмещение вреда</span>
                         </a>
-                        <a href="#debt-collection" class="btn btn-outline-primary btn-sm">
-                            <i class="bi bi-credit-card-fill me-1"></i>Взыскание долгов
+                    </div>
+                    <div class="col">
+                        <a href="#debt-collection" class="btn btn-primary w-100 text-white d-flex align-items-center justify-content-center" 
+                           style="background-color: #2a6ad1; border: none; height: 70px; min-height: 70px; padding: 0.5rem 1rem;">
+                            <i class="bi bi-credit-card-fill me-2"></i>
+                            <span style="font-size: 1.125rem;">Взыскание долгов</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Секция услуг с якорями -->
     
@@ -288,90 +308,457 @@
 
     <!-- 4. Возмещение вреда -->
     <section id="compensation" class="mb-5 pt-4">
-        <div class="row align-items-center mb-4">
-            <div class="col-md-8">
-                <h2 class="fw-bold mb-3">
-                    <i class="bi bi-cash-stack text-primary me-3"></i>Возмещение вреда
-                </h2>
-                <p class="lead text-muted">Компенсация материального и морального ущерба</p>
-            </div>
-            <div class="col-md-4 text-md-end">
-                <a href="#contact-form" class="btn btn-primary">
-                    <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
-                </a>
+    <div class="row align-items-center mb-4">
+        <div class="col-md-8">
+            <h2 class="fw-bold mb-3">
+                <i class="bi bi-cash-stack text-primary me-3"></i>Возмещение вреда
+            </h2>
+            <p class="lead text-muted">Компенсация материального и морального ущерба</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <a href="#contact-form" class="btn btn-primary">
+                <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
+            </a>
+        </div>
+    </div>
+
+    <!-- Табы для переключения между материальным и моральным вредом -->
+    <ul class="nav nav-pills mb-4" id="compensationTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="material-tab" data-bs-toggle="tab" 
+                    data-bs-target="#material-tab-pane" type="button" role="tab" 
+                    aria-controls="material-tab-pane" aria-selected="true">
+                <i class="bi bi-cash-stack me-2"></i>Материальный ущерб
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="moral-tab" data-bs-toggle="tab" 
+                    data-bs-target="#moral-tab-pane" type="button" role="tab" 
+                    aria-controls="moral-tab-pane" aria-selected="false">
+                <i class="bi bi-heartbreak me-2"></i>Моральный вред
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="compensationTabsContent">
+        <!-- Вкладка 1: Материальный ущерб -->
+        <div class="tab-pane fade show active" id="material-tab-pane" role="tabpanel" 
+             aria-labelledby="material-tab" tabindex="0">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">Что мы взыскиваем:</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Ущерб от ДТП</strong> - ремонт авто, утрата товарной стоимости, эвакуация
+                                </li>
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Затопление и пожар</strong> - ремонт квартиры, замена мебели, отделка
+                                </li>
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Врачебные ошибки</strong> - расходы на лечение, операции, реабилитацию
+                                </li>
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Порча имущества</strong> - ремонт/замена техники, мебели, недвижимости
+                                </li>
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Упущенная выгода</strong> - потерянные доходы, сорванные сделки, простой бизнеса
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-4 pt-3 border-top">
+                                <h6 class="fw-bold mb-3">Стоимость услуг:</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Экспертиза ущерба</span>
+                                            <strong class="text-primary">от 5 000 ₽</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Досудебная претензия</span>
+                                            <strong class="text-primary">от 7 000 ₽</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Судебное взыскание</span>
+                                            <strong class="text-primary">от 20 000 ₽</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Или процент от взысканной суммы</span>
+                                            <strong class="text-primary">10-20%</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card border-primary border-2 h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i>Сроки и статистика</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h6 class="fw-bold">Средний срок взыскания:</h6>
+                                <p class="mb-0">1-4 месяца</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="fw-bold">Средняя сумма взыскания:</h6>
+                                <p class="mb-0 text-success fw-bold">от 50 000 до 5 000 000 ₽</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="fw-bold">Успешность дел:</h6>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-success" style="width: 92%">92%</div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <a href="#contact-form" class="btn btn-primary w-100">
+                                    <i class="bi bi-calculator me-2"></i>Рассчитать ущерб
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Вкладка 2: Моральный вред -->
+        <div class="tab-pane fade" id="moral-tab-pane" role="tabpanel" 
+             aria-labelledby="moral-tab" tabindex="0">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">За что взыскиваем компенсацию:</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Травмы и увечья</strong> - боль, страдания от ДТП, нападений, несчастных случаев
+                                </li>
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Врачебные ошибки</strong> - физические и психологические последствия халатности
+                                </li>
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Клевета и оскорбления</strong> - удар по репутации, публичное унижение
+                                </li>
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Потеря близких</strong> - компенсация за гибель родственников
+                                </li>
+                                <li class="list-group-item border-0 px-0 py-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>Дискриминация</strong> - ущемление прав по полу, возрасту, национальности
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-4 pt-3 border-top">
+                                <h6 class="fw-bold mb-3">Примерные размеры компенсации:</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Легкий вред здоровью</span>
+                                            <strong class="text-primary">50-200 тыс. ₽</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Средний вред здоровью</span>
+                                            <strong class="text-primary">200-500 тыс. ₽</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Тяжкий вред здоровью</span>
+                                            <strong class="text-primary">500 тыс. - 2 млн ₽</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Смерть кормильца</span>
+                                            <strong class="text-primary">1-5 млн ₽</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card border-primary border-2 h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="bi bi-graph-up me-2"></i>Эффективность</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h6 class="fw-bold">Средняя компенсация:</h6>
+                                <p class="mb-0 text-success fw-bold">150 000 - 800 000 ₽</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="fw-bold">Максимальная компенсация:</h6>
+                                <p class="mb-0 text-success fw-bold">5 000 000 ₽</p>
+                                <small class="text-muted">(по одному делу)</small>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="fw-bold">Успешность дел:</h6>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-success" style="width: 88%">88%</div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <a href="#contact-form" class="btn btn-primary w-100">
+                                    <i class="bi bi-file-earmark-text me-2"></i>Оценить ваш случай
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         
         <!-- Контент для возмещения вреда -->
     </section>
 
     <!-- 5. Взыскание долгов -->
     <section id="debt-collection" class="mb-5 pt-4">
-        <div class="row align-items-center mb-4">
-            <div class="col-md-8">
-                <h2 class="fw-bold mb-3">
-                    <i class="bi bi-credit-card-fill text-primary me-3"></i>Взыскание долгов
-                </h2>
-                <p class="lead text-muted">Принудительное взыскание через суд и службу судебных приставов</p>
-            </div>
-            <div class="col-md-4 text-md-end">
-                <a href="#contact-form" class="btn btn-primary">
-                    <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
-                </a>
-            </div>
+    <div class="row align-items-center mb-4">
+        <div class="col-md-8">
+            <h2 class="fw-bold mb-3">
+                <i class="bi bi-credit-card-fill text-primary me-3"></i>Взыскание долгов
+            </h2>
+            <p class="lead text-muted">Взыскание долгов любой категории через суд, оказание услуг в ФССП РФ</p>
         </div>
-        
-        <!-- Контент для взыскания долгов -->
-    </section>
+        <div class="col-md-4 text-md-end">
+            <a href="#contact-form" class="btn btn-primary">
+                <i class="bi bi-chat-dots me-2"></i>Консультация по услуге
+            </a>
+        </div>
+    </div>
 
-    <!-- Форма заявки (якорь для ссылок) -->
-    <section id="contact-form" class="py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="card border-0 shadow-lg">
-                    <div class="card-body p-4 p-lg-5">
-                        <h3 class="fw-bold mb-4 text-center">Записаться на консультацию</h3>
-                        
-                        <form method="post" action="{% url 'home' %}">
-                            {% csrf_token %}
-                            
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Ваше имя</label>
-                                <input type="text" class="form-control form-control-lg" id="name" name="name" required>
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-3">Какие долги мы взыскиваем:</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border-0 px-0 py-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <strong>Кредитные долги</strong> - банковские займы, микрозаймы, кредитные карты
+                        </li>
+                        <li class="list-group-item border-0 px-0 py-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <strong>Долги по распискам</strong> - займы между физическими лицами, родственниками, друзьями
+                        </li>
+                        <li class="list-group-item border-0 px-0 py-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <strong>Задолженность по договорам</strong> - неоплата услуг, товаров, аренды, подряда
+                        </li>
+                        <li class="list-group-item border-0 px-0 py-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <strong>Алиментные обязательства</strong> - взыскание алиментов на детей, супругов, родителей
+                        </li>
+                        <li class="list-group-item border-0 px-0 py-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <strong>Долги бизнеса</strong> - дебиторская задолженность, неоплаченные счета, неустойки
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-4 pt-3 border-top">
+                        <h6 class="fw-bold mb-3">Работа с ФССП (судебными приставами):</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="bi bi-search text-primary fs-4 me-3"></i>
+                                    <div>
+                                        <strong>Поиск имущества должника</strong>
+                                        <p class="mb-0 small">Банковские счета, недвижимость, автомобили</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="bi bi-shield-lock text-primary fs-4 me-3"></i>
+                                    <div>
+                                        <strong>Арест и реализация имущества</strong>
+                                        <p class="mb-0 small">Наложение ареста, оценка, торги</p>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Телефон</label>
-                                <input type="tel" class="form-control form-control-lg" id="phone" name="phone" required>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="bi bi-bookmark-dash text-primary fs-4 me-3"></i>
+                                    <div>
+                                        <strong>Ограничительные меры</strong>
+                                        <p class="mb-0 small">Запрет на выезд, лишение водительских прав</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="bi bi-cash-coin text-primary fs-4 me-3"></i>
+                                    <div>
+                                        <strong>Взыскание с зарплаты</strong>
+                                        <p class="mb-0 small">Удержание до 50% от дохода должника</p>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="mb-3">
-                                <label for="service" class="form-label">Интересующая услуга</label>
-                                <select class="form-control form-control-lg" id="service" name="service">
-                                    <option value="">Выберите услугу</option>
-                                    <option value="consumer-rights">Защита прав потребителя</option>
-                                    <option value="family-law">Семейное право</option>
-                                    <option value="auto-lawyer">Автоюрист</option>
-                                    <option value="compensation">Возмещение вреда</option>
-                                    <option value="debt-collection">Взыскание долгов</option>
-                                </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 pt-3 border-top">
+                        <h6 class="fw-bold mb-3">Стоимость услуг:</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Претензионная работа</span>
+                                    <strong class="text-primary">от 5 000 ₽</strong>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Подготовка иска в суд</span>
+                                    <strong class="text-primary">от 10 000 ₽</strong>
+                                </div>
                             </div>
-                            
-                            <div class="mb-3">
-                                <label for="question" class="form-label">Краткое описание вопроса</label>
-                                <textarea class="form-control form-control-lg" id="question" name="question" rows="3"></textarea>
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Полное сопровождение</span>
+                                    <strong class="text-primary">от 25 000 ₽</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>Или процент от взысканной суммы</span>
+                                    <strong class="text-primary">15-30%</strong>
+                                </div>
                             </div>
-                            
-                            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
-                                <i class="bi bi-send me-2"></i>Отправить заявку
-                            </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-</div>
+        
+        <div class="col-lg-4">
+            <div class="card border-primary border-2 h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-graph-up-arrow me-2"></i>Результативность</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h6 class="fw-bold">Этапы взыскания:</h6>
+                        <div class="timeline small">
+                            <div class="timeline-item mb-2">
+                                <span class="badge bg-primary">1-2 недели</span>
+                                <span class="ms-2">Досудебная претензия</span>
+                            </div>
+                            <div class="timeline-item mb-2">
+                                <span class="badge bg-primary">1-3 месяца</span>
+                                <span class="ms-2">Судебное решение</span>
+                            </div>
+                            <div class="timeline-item mb-2">
+                                <span class="badge bg-primary">до 6 месяцев</span>
+                                <span class="ms-2">Исполнительное производство</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="badge bg-primary">1-12 месяцев</span>
+                                <span class="ms-2">Фактическое получение денег</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="fw-bold">Средняя сумма взыскания:</h6>
+                        <p class="mb-0 text-success fw-bold">от 50 000 до 5 000 000 ₽</p>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="fw-bold">Успешность дел:</h6>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-success" style="width: 90%">90%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="#contact-form" class="btn btn-primary w-100 mb-2">
+                            <i class="bi bi-file-earmark-text me-2"></i>Проверить долг
+                        </a>
+                        <a href="#contact-form" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-telephone me-2"></i>Консультация пристава
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Форма заявки (якорь для ссылок) -->
+    <section id="contact-form" class="py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg">
+                <div class="card-body p-4 p-lg-5">
+                    <h3 class="fw-bold mb-4 text-center">Записаться на консультацию</h3>
+                    
+                    <form method="post" action="{% url 'home' %}">  <!-- Изменён action -->
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ваше имя <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Телефон <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control form-control-lg" id="phone" name="phone" 
+                                   placeholder="+7 (999) 123-45-67" required>
+                            <div class="form-text">Введите номер в международном формате</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Электронная почта <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control form-control-lg" id="email" name="email" 
+                                   placeholder="example@mail.ru" required>
+                            <div class="form-text">На эту почту придёт ответ от юриста</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Интересующая услуга</label>
+                            <select class="form-control form-control-lg" id="service" name="service">
+                                <option value="">Выберите услугу</option>
+                                <option value="consumer-rights">Защита прав потребителя</option>
+                                <option value="family-law">Семейное право</option>
+                                <option value="auto-lawyer">Автоюрист</option>
+                                <option value="compensation">Возмещение вреда</option>
+                                <option value="debt-collection">Взыскание долгов</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="question" class="form-label">Краткое описание вопроса</label>
+                            <textarea class="form-control form-control-lg" id="question" name="question" rows="3" 
+                                      placeholder="Опишите вашу ситуацию..."></textarea>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agree" name="agree" required>
+                            <label class="form-check-label small" for="agree">
+                                Согласен на обработку персональных данных <span class="text-danger">*</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+                            <i class="bi bi-send me-2"></i>Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block extra_css %}

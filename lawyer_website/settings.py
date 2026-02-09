@@ -20,7 +20,7 @@ ALLOWED_HOSTS = [
     'saintptavo.com',    # Раскомментируйте для продакшена
     'lawyer-site.up.railway.app',
     '.railway.app',
-    '.up.railway.app',
+    'https://gutorov777.pythonanywhere.com/',
     '0.0.0.0',
 ]
 

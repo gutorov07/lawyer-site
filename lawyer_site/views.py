@@ -73,12 +73,44 @@ def about(request):
 
 def services(request):
     """Страница всех услуг"""
-    service_type = Service.objects.filter(is_active=True).order_by('order')
-    context = {
-        'services': service_type,
-        'title': 'Наши услуги'
-    }
-    return render(request, 'lawyer_site/services.html', context)
+    
+    # Обработка POST запроса (отправка формы)
+    if request.method == 'POST':
+        name = request.POST.get('name', '').strip()
+        phone = request.POST.get('phone', '').strip()
+        question = request.POST.get('question', '').strip()
+        email = request.POST.get('email', '').strip()
+        service = request.POST.get('service', '').strip()  # Добавь эту переменную!
+        
+        # Проверка обязательных полей
+        if not all([name, phone, email]):
+            messages.error(request, 'Пожалуйста, заполните все обязательные поля')
+            return redirect('services')
+        
+        # Отправка email
+        try:
+            send_mail(
+                subject=f'Новая заявка на консультацию: {name}',
+                message=f'Имя: {name}\nТелефон: {phone}\nEmail: {email}\nУслуга: {service}\nВопрос: {question}',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=['mspelmen5@gmail.com'],
+                fail_silently=False,
+            )
+            messages.success(request, 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.')
+        except Exception as e:
+            messages.error(request, f'Ошибка при отправке: {str(e)}')
+        
+        return redirect('services')  # Редирект на ту же страницу
+    
+    # Обработка GET запроса (показ страницы)
+    else:
+        context = {
+            'title': 'Наши услуги',
+            # добавь другие данные, если нужны
+            # 'services_list': Service.objects.all(),
+        }
+        return render(request, 'lawyer_site/services.html', context)
+
 
 def service_detail(request, service_id):
     """Детальная страница услуги"""

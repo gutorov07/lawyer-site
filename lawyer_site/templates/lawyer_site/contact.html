@@ -5,7 +5,8 @@
 {% block content %}
 <div class="container py-5">
     <div class="row">
-        <div class="col-lg-6 mb-5 mb-lg-0">
+        <!-- Левая колонка: Контакты -->
+        <div class="col-lg-3 mb-5 mb-lg-0">
             <h1 class="fw-bold mb-4">{{ title }}</h1>
             
             <div class="mb-4">
@@ -31,38 +32,48 @@
             </div>
         </div>
         
-        <div class="col-lg-6">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h5 class="card-title mb-4">Отправить сообщение</h5>
+        <!-- Правая колонка: Форма -->
+        <div class="col-lg-9">
+            <div class="card border-0 shadow-lg">
+                <div class="card-body p-4 p-lg-5">
+                    <h3 class="fw-bold mb-4">Отправить сообщение</h3>
                     
-                    <form method="post">
+                    <form id="contact-form" method="post" action="{% url 'home' %}">
                         {% csrf_token %}
                         
                         <div class="mb-3">
                             <label for="name" class="form-label">Ваше имя</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" required>
                         </div>
                         
                         <div class="mb-3">
                             <label for="phone" class="form-label">Телефон</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                            <input type="tel" class="form-control form-control-lg" id="phone" name="phone" required>
                         </div>
                         
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email">
+                            <label for="question" class="form-label">Краткое описание вопроса</label>
+                            <textarea class="form-control form-control-lg" id="question" name="question" rows="3" required></textarea>
                         </div>
                         
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Сообщение</label>
-                            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agree" required>
+                            <label class="form-check-label small" for="agree">
+                                Согласен на обработку персональных данных
+                            </label>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary btn-lg w-100">
-                            <i class="bi bi-send me-2"></i>Отправить
+                        <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+                            Отправить заявку
                         </button>
                     </form>
+                    
+                    <div class="mt-4 text-center">
+                        <p class="text-muted small mb-2">Или позвоните прямо сейчас</p>
+                        <a href="tel:+74951234567" class="btn btn-outline-primary">
+                            <i class="bi bi-telephone me-2"></i>+7 (495) 123-45-67
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
